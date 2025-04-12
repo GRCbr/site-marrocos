@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra Marrocos - Guia Turístico</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-map-marker-alt text-danger"></i> Marrocos
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#destinos">Destinos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cultura">Cultura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dicas">Dicas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center" id="home">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Descubra as Maravilhas de Marrocos</h1>
+            <p class="lead mb-5">Um país de cores vibrantes, sabores exóticos e experiências inesquecíveis</p>
+            <button class="btn btn-primary btn-lg" id="showWeather">Verificar Clima</button>
+            <div id="weatherInfo" class="solid-text">
+                <h4 class="solid-text">Clima em Marrakech:</h4>
+                <p class="solid-text">Temperatura: 28°C</p>
+                <p class="solid-text">Condição: Ensolarado</p>
+                <p class="solid-text">Melhor época para visitar: Março a Maio ou Setembro a Novembro</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinos Section -->
+    <section class="container my-5" id="destinos">
+        <h2 class="text-center mb-5">Principais Destinos</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="imagens/Marrakech.jpg" class="card-img-top" alt="Marrakech">
+                    <div class="card-body">
+                        <h5 class="card-title">Marrakech</h5>
+                        <p class="card-text">Conhecida como a "Cidade Vermelha", Marrakech é famosa pelo seu mercado central (souk), pela Praça Jemaa el-Fnaa e pelos jardins Majorelle.</p>
+                        <button class="btn btn-sm btn-outline-primary destino-btn" data-cidade="Marrakech">Saiba mais</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="imagens/fez3.jpg" class="card-img-top" alt="Fez">
+                    <div class="card-body">
+                        <h5 class="card-title">Fez</h5>
+                        <p class="card-text">Uma das cidades imperiais de Marrocos, Fez é conhecida pela sua medina medieval, considerada Patrimônio Mundial da UNESCO.</p>
+                        <button class="btn btn-sm btn-outline-primary destino-btn" data-cidade="Fez">Saiba mais</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="imagens/chefchaouen.jpg" class="card-img-top" alt="Chefchaouen">
+                    <div class="card-body">
+                        <h5 class="card-title">Chefchaouen</h5>
+                        <p class="card-text">A "Cidade Azul" impressiona com suas casas pintadas em tons de azul, criando um cenário único nas montanhas do Rif.</p>
+                        <button class="btn btn-sm btn-outline-primary destino-btn" data-cidade="Chefchaouen">Saiba mais</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 text-center" id="destinoInfo">
+                <div class="alert alert-info d-none">
+                    <h4 id="cidadeNome"></h4>
+                    <p id="cidadeDesc"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultura Section -->
+    <section class="bg-light py-5" id="cultura">
+        <div class="container">
+            <h2 class="text-center mb-5">Cultura Marroquina</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h4><i class="fas fa-utensils text-primary"></i> Gastronomia</h4>
+                    <p>A culinária marroquina é rica em sabores e especiarias. O prato mais famoso é o tajine, um ensopado lento preparado com carne, legumes e especiarias como açafrão, cominho e canela. Outras delícias incluem o cuscuz, harira (sopa) e pastilla (torta salgada).</p>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <h4><i class="fas fa-handshake text-primary"></i> Hospitalidade</h4>
+                    <p>Os marroquinos são conhecidos por sua hospitalidade calorosa. É comum ser convidado para tomar chá de hortelã, uma tradição importante na cultura local que simboliza amizade e respeito.</p>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <h4><i class="fas fa-mosque text-primary"></i> Religião</h4>
+                    <p>O Islã é a principal religião em Marrocos, e você verá belas mesquitas por todo o país. Os turistas não-muçulmanos não podem entrar na maioria das mesquitas, com exceção da Mesquita Hassan II em Casablanca.</p>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <h4><i class="fas fa-shopping-cart text-primary"></i> Artesanato</h4>
+                    <p>O artesanato marroquino é mundialmente reconhecido. Tapetes, cerâmica, lanternas, artigos de couro e joias são presentes perfeitos para levar como lembrança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section class="container my-5" id="galeria">
+        <h2 class="text-center mb-5">Galeria</h2>
+        <div class="row" id="galeriaFotos">
+            <div class="col-md-4">
+                <img src="imagens/deserto.jpg" class="img-fluid rounded gallery-img" alt="Deserto do Saara">
+            </div>
+            <div class="col-md-4">
+                <img src="imagens/marrakeshi3.jpg" class="img-fluid rounded gallery-img" alt="Mercado">
+            </div>
+            <div class="col-md-4">
+                <img src="imagens/arquitetura.jpg" class="img-fluid rounded gallery-img" alt="Arquitetura">
+            </div>
+            <div class="col-md-4">
+                <img src="imagens/cidade.jpg" class="img-fluid rounded gallery-img" alt="Cidades">
+            </div>
+            <div class="col-md-4">
+                <img src="imagens/cha.jpg" class="img-fluid rounded gallery-img" alt="Chá">
+            </div>
+            <div class="col-md-4">
+                <img src="imagens/costa.jpg" class="img-fluid rounded gallery-img" alt="Costa">
+            </div>
+        </div>
+        <!-- Modal para exibir imagens ampliadas -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="" id="modalImage" class="img-fluid">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dicas Section -->
+    <section class="bg-light py-5" id="dicas">
+        <div class="container">
+            <h2 class="text-center mb-5">Dicas para Viajantes</h2>
+            <div class="accordion" id="accordionDicas">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            Melhor época para visitar
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionDicas">
+                        <div class="accordion-body">
+                            A primavera (março a maio) e o outono (setembro a novembro) são as melhores épocas para visitar Marrocos, com temperaturas amenas. Evite o verão se não suportar calor intenso, especialmente nas regiões desérticas.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Vestuário e etiqueta
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionDicas">
+                        <div class="accordion-body">
+                            Marrocos é um país muçulmano, então é aconselhável vestir-se com moderação. Mulheres devem evitar roupas muito reveladoras e tanto homens quanto mulheres devem cobrir os ombros em locais religiosos.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            Transporte
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionDicas">
+                        <div class="accordion-body">
+                            Os táxis pequenos (petit taxi) são bons para se locomover dentro das cidades, enquanto os táxis grandes (grand taxi) são para viagens entre cidades. Há também um bom sistema de trem conectando as principais cidades. Para aventuras no deserto, considere contratar um guia local.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                            Barganha
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionDicas">
+                        <div class="accordion-body">
+                            A barganha é uma parte importante da cultura marroquina. Nos souks (mercados), é esperado que você negocie. Comece oferecendo cerca de 40% do preço inicial e trabalhe a partir daí. Mantenha sempre o bom humor durante a negociação.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section class="container my-5" id="contato">
+        <h2 class="text-center mb-5">Entre em Contato</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <form id="contatoForm">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="assunto" class="form-label">Assunto</label>
+                        <select class="form-select" id="assunto">
+                            <option>Planejamento de viagem</option>
+                            <option>Dúvidas sobre destinos</option>
+                            <option>Pacotes turísticos</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+                <div class="alert alert-success mt-3 d-none" id="formSucesso">
+                    Mensagem enviada com sucesso! Entraremos em contato em breve.
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-4 bg-light rounded">
+                    <h4>Planeje sua viagem perfeita para Marrocos</h4>
+                    <p>Nossa equipe de especialistas está pronta para ajudar você a planejar a viagem dos seus sonhos. Respondemos todas as suas dúvidas e oferecemos dicas personalizadas.</p>
+                    <hr>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-envelope text-primary me-3 fa-2x"></i>
+                        <div>
+                            <h5 class="mb-0">Email</h5>
+                            <p class="mb-0">guilherme.castro9@fatec.sp.gov.br</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-phone text-primary me-3 fa-2x"></i>
+                        <div>
+                            <h5 class="mb-0">Telefone</h5>
+                            <p class="mb-0">+55 19 9 8973-2899</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-map-marker-alt text-primary me-3 fa-2x"></i>
+                        <div>
+                            <h5 class="mb-0">Endereço</h5>
+                            <p class="mb-0"> R. Tereza Lera Paoletti, 590 - Bela Vista, Itapira - SP, 13974-080</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Sobre Marrocos</h5>
+                    <p>Marrocos é um país do norte da África que combina influências árabes, berberes e europeias. Com paisagens que vão do deserto do Saara às montanhas do Atlas e praias do Mediterrâneo e Atlântico.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Início</a></li>
+                        <li><a href="#destinos" class="text-white">Destinos</a></li>
+                        <li><a href="#cultura" class="text-white">Cultura</a></li>
+                        <li><a href="#galeria" class="text-white">Galeria</a></li>
+                        <li><a href="#dicas" class="text-white">Dicas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga-nos</h5>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube fa-2x"></i></a>
+                    </div>
+                    <div class="mt-3">
+                        <h5>Inscreva-se para Ofertas</h5>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Seu email">
+                            <button class="btn btn-primary" type="button">Inscrever</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 bg-light">
+            <div class="text-center">
+                <p>&copy; 2025 Alunos Prof. Júnior . Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
