@@ -1,0 +1,58 @@
+/* Estilos Gerais */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/mosque-4134459_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.testimonial {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 50px 0;
+}
+
+.gallery-img {
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+#weatherInfo {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.sticky-top {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.solid-text {
+     color: #000 !important;
+     opacity: 1 !important;
+     font-weight: normal;
+     text-shadow: none;
+}
